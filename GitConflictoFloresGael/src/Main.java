@@ -20,6 +20,7 @@ public class Main {
         System.out.printf("Total a pagar: %.2f%n", total);
     }
 
+
     public static double pedirDouble(Scanner scanner, String mensaje) {
         System.out.print(mensaje);
         return scanner.nextDouble();
