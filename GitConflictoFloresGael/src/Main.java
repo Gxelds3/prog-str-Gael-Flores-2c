@@ -11,18 +11,25 @@ public class Main {
         double subtotal = pedirDouble(scanner, "Subtotal: ");
         double total = subtotal;
 
-        if (subtotal > UMBRAL_DESCUENTO) {
-            total = total - (total * DESCUENTO);
-        }
-
-        total = total + (total * IVA);
+        total = aplicarDescuentoSiAplica(total, subtotal);
+        total = calcularTotalConIva(total);
 
         System.out.printf("Total a pagar: %.2f%n", total);
     }
 
-
     public static double pedirDouble(Scanner scanner, String mensaje) {
         System.out.print(mensaje);
         return scanner.nextDouble();
+    }
+
+    public static double calcularTotalConIva(double total) {
+        return total + (total * IVA);
+    }
+
+    public static double aplicarDescuentoSiAplica(double total, double subtotal) {
+        if (subtotal > UMBRAL_DESCUENTO) {
+            total = total - (total * DESCUENTO);
+        }
+        return total;
     }
 }
