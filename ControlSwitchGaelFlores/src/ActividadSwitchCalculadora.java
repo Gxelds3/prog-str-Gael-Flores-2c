@@ -21,7 +21,7 @@ public class ActividadSwitchCalculadora {
                 double variableB = obtenerDouble(sc, "Ingrese el 2do valor: ");
                 double suma = calcularSuma(variableA, variableB);
                 System.out.println("Opcion elegida suma +");
-                System.out.println("Valores ingresados: " + variableA + " 2do " + variableB);
+                System.out.println("Valores ingresados: " + variableA + " y " + variableB);
                 System.out.println("La suma es: " + suma);
                 break;
 
