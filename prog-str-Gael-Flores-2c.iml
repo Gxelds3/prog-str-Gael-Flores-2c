@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/GitAdivinaElNumeroGaelFlores/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CotizadorDeEnvio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cotizadorEnvio/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ControlDeCalificaciones/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
