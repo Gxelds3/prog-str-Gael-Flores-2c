@@ -32,8 +32,8 @@ public class Main {
         persona1.setId(1);
         persona1.setName("Test");
         persona1.setActive(true);
-        Persona persona2 = new Persona(2,"Eliel");
-        Persona persona3 = new Persona(3,"David");
+        Persona persona2 = new Persona(2,"Eliel.");
+        Persona persona3 = new Persona(3,"David.");
 
         personas[0]=persona1;
         personas[1]=persona2;
