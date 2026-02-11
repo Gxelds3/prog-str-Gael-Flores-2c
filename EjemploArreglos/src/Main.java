@@ -30,7 +30,7 @@ public class Main {
         Persona[] personas = new Persona[3];
         Persona persona1 = new Persona();
         persona1.setId(1);
-        persona1.setName("Test");
+        persona1.setName("Test.");
         persona1.setActive(true);
         Persona persona2 = new Persona(2,"Eliel.");
         Persona persona3 = new Persona(3,"David.");
