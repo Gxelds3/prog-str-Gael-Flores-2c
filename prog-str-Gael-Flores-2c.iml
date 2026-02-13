@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/CotizadorDeEnvio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cotizadorEnvio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ControlDeCalificaciones/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/EjemploArreglos/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
