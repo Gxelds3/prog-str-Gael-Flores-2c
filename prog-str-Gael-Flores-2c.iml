@@ -11,6 +11,8 @@
       <sourceFolder url="file://$MODULE_DIR$/cotizadorEnvio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ControlDeCalificaciones/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/EjemploArreglos/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ArregloAlumnos/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ActividadIfElse/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
