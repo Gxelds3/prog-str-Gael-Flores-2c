@@ -17,12 +17,14 @@ public class AppController {
     private Label lblMsg;
     @FXML
     private ListView<String> listView;
+
     @FXML
-    private TextField txtName;
+    private TextField txtNombre;
+
     @FXML
     private TextField txtEmail;
     @FXML
-    private TextField txtAge;
+    private TextField txtEdad;
 
     private ObservableList<String> data = FXCollections.observableArrayList();
     PersonService service= new PersonService();
@@ -30,7 +32,18 @@ public class AppController {
     @FXML
     public void initialize(){
         listView.setItems(data);
+        listView.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> {
+                    if (newValue != null) {
+                        String[] parts = newValue.split("-");
+                        txtNombre.setText(parts[0]);
+                        txtEmail.setText(parts[1]);
+                        txtEdad.setText(parts[2]);
+                    }
+                }
+        )  ;
         loadFromFile();
+
     }
 
     @FXML
@@ -39,38 +52,63 @@ public class AppController {
     }
 
     @FXML
-    public void onAddPerson() {
-        try {
-            String name = txtName.getText();
+    public void onAddPerson(){
+        try{
+            String name = txtNombre.getText();
             String email = txtEmail.getText();
-
-
-            int age = Integer.parseInt(txtAge.getText());
-
-
-            service.addPerson(name, email, age);
-
-            lblMsg.setText("Usuario ingresado correctamente");
-            lblMsg.setStyle("-fx-text-fill: green");
-
-
-            txtName.clear();
+            String edad = txtEdad.getText();
+            service.addPerson(name,email,edad);
+            lblMsg.setText("Usuario creado correctamente");
+            lblMsg.setStyle("-fx-text-alignment: green");
+            txtNombre.clear();
             txtEmail.clear();
-            txtAge.clear();
+            txtEdad.clear();
             loadFromFile();
+        }catch (IOException e){
+            lblMsg.setText("Es error de arhcivo"+ e.getMessage());
+            lblMsg.setStyle("-fx-text-alignment: green");
 
-        } catch (NumberFormatException e) {
-
-            lblMsg.setText("Error: La edad debe ser un número");
-            lblMsg.setStyle("-fx-text-fill: red");
-        } catch (IllegalArgumentException e) {
-
-            lblMsg.setText(e.getMessage());
-            lblMsg.setStyle("-fx-text-fill: red");
-        } catch (IOException e) {
-            lblMsg.setText("Error de archivo: " + e.getMessage());
-            lblMsg.setStyle("-fx-text-fill: red");
+        } catch (IllegalArgumentException e){
+            lblMsg.setText("Es error de datos" + e.getMessage());
+            lblMsg.setStyle("-fx-text-alignment: red");
         }
+    }
+    @FXML
+    public void onUpdate(){
+        try{
+            int index = listView.getSelectionModel().getSelectedIndex();
+            String name = txtNombre.getText();
+            String email = txtEmail.getText();
+            String edad = txtEdad.getText();
+            service.updatePerson(index,name,email,edad);
+            loadFromFile();
+            txtNombre.clear();
+            txtEmail.clear();
+            txtEdad.clear();
+            lblMsg.setText("Se Actualizo correctamente");
+        }catch (IOException e){
+            lblMsg.setText("Hubo un error en el archivo");
+        } catch (IllegalArgumentException error){
+            lblMsg.setText("Hubo un error con los datos" +error.getMessage());
+        }
+
+    }
+    @FXML
+    public void onDelete(){
+        try{
+            int index = listView.getSelectionModel().getSelectedIndex();
+            service.onDelete(index);
+            loadFromFile();
+            txtNombre.clear();
+            txtEmail.clear();
+            txtEdad.clear();
+            lblMsg.setText("Se Elimino correctamente");
+        }catch (IOException e){
+            lblMsg.setText("Hubo un error en el archivo");
+        } catch (IllegalArgumentException error){
+            lblMsg.setText("Hubo un error con los datos" +error.getMessage());
+        }
+
     }
 
     private void loadFromFile(){
