@@ -107,7 +107,7 @@ public class appController {
 
         if (fueEliminado) {
             limpiar();
-            Mensaje.setText("Contacto eliminado");
+            Mensaje.setText("Contacto eliminado.");
             Mensaje.setStyle("-fx-text-fill: blue");
         } else {
             Mensaje.setText("No se pudo eliminar: nombre no encontrado");
