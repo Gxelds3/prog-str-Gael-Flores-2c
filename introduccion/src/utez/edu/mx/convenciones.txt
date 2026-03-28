@@ -1,0 +1,12 @@
+Regla de Oro: todo en inglés
+convenciones ------->
+
+
+1.- TowerCase = person, Animal, ResumeTicket, RolofUser (uso: nombres de clase)
+2.-camelCase = CalculateArea, AddtoTicket (uso: funciones, variables )
+3.- snake_case = user, user_has_role, student_group (uso: nombres de tablas y propiedades en BD)
+4.- SCREAMING_SNAKE_CASE = PI, GRAVITY, ENCODER (uso: nombres de constantes o propiedades/variables de entorno )
+5.- dot.case = server.port, jbdc.url, user.controller.js (uso: npmbres de propiedades/variables de entorno o nombres de archivos en WEB (.js, .ts))
+6.- train-case = api-user-endpoint, user-view.html( uso: nombres dde endpoints o nombres de archivos html)
+
+com.sat.servicios.mx
