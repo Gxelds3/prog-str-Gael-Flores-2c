@@ -132,7 +132,7 @@ public class appController {
         }
 
         if (!encontrado) {
-            Mensaje.setText("Contacto no registrado");
+            Mensaje.setText("Contacto no registrado.");
             Mensaje.setStyle("-fx-text-fill: red");
         }
     }
