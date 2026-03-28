@@ -124,7 +124,7 @@ public class appController {
                 telefono.setText(c.getTelefono());
                 parentestos.setValue(c.getParentesco());
 
-                Mensaje.setText("Contacto encontrado");
+                Mensaje.setText("Contacto encontrado.");
                 Mensaje.setStyle("-fx-text-fill: green");
                 encontrado = true;
                 break;
